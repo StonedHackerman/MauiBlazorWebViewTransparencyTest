@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TransparencyTest"
+             xmlns:pages="clr-namespace:TransparencyTest.Pages"
+             x:Class="TransparencyTest.MainPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             Loaded="MainPage_OnLoaded">
+
+    <StackLayout>
+        <Label>This is a MAUI label</Label>
+
+        <BlazorWebView x:Name="BlazorWebView" HostPage="wwwroot/index.html" BackgroundColor="Transparent" 
+                       Margin="0,-10,0,0" MinimumHeightRequest="20">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type pages:Index}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </StackLayout>
+
+</ContentPage>
